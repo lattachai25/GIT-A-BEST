@@ -1,0 +1,6 @@
+npm init
+
+npm i mysql cors express
+npm i nodemon
+
+npm run dev
