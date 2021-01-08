@@ -13,6 +13,19 @@ const db = mysql.createConnection({
   database: "pos_dev",
 });
 
+app.get("/sub/list", (req, res) => {
+  db.query(
+    "SELECT sub.*, type.* FROM ((sub INNER JOIN type ON sub.type_id = type.type_id) )",
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 app.get("/user/list", (req, res) => {
   db.query(
     "SELECT user.*, protion.*, status.*, branch.* FROM (((user INNER JOIN protion ON user.protion_id = protion.protion_id) INNER JOIN status ON user.status_id = status.status_id) INNER JOIN branch ON user.branch_id = branch.branch_id)",
@@ -36,8 +49,14 @@ app.get("/branch/list", (req, res) => {
   });
 });
 
-app.listen("3001", () => {
-  console.log("Server Is Running on Compass! 3001");
+app.get("/type/list", (req, res) => {
+  db.query("SELECT * FROM type", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
 });
 
 app.post("/user/create", (req, res) => {
@@ -70,4 +89,29 @@ app.post("/user/create", (req, res) => {
       }
     }
   );
+});
+
+app.post("/sub/create", (req, res) => {
+  const sub_number = req.body.sub_number;
+  const sub_name = req.body.sub_name;
+  const sub_phone = req.body.sub_phone;
+  const sub_contact_name = req.body.sub_contact_name;
+  const sub_address = req.body.sub_address;
+  const type_id = req.body.type_id;
+
+  db.query(
+    "INSERT INTO sub (sub_number, sub_name, sub_phone, sub_contact_name, sub_address, type_id) VALUES(?,?,?,?,?,?)",
+    [sub_number, sub_name, sub_phone, sub_contact_name, sub_address, type_id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Inserte Sub ComPlete!!");
+      }
+    }
+  );
+});
+
+app.listen("3001", () => {
+  console.log("Server Is Running on Compass! 3001");
 });

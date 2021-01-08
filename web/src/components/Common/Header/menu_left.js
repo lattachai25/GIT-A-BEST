@@ -174,8 +174,11 @@ export default () => {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header"> Sourcing List:</h6>
+              <Link to="/Listall" className="collapse-item">
+                รายชื่อ Subplier
+              </Link>
               <Link to="/Sub" className="collapse-item">
-                สร้างชื่อคู่ค้า
+                สร้างชื่อ Subplier
               </Link>
               <Link to="/Price" className="collapse-item">
                 ปรับราคาสินค้า
@@ -187,7 +190,7 @@ export default () => {
                 สร้าง BarCode
               </Link>
               <Link to="/Sour_Admin" className="collapse-item">
-                Sour_Admin
+                Subplier_Admin
               </Link>
               {/* <Link to="/Report_sourcing_all" className="collapse-item">
                 รายงานสินค้าตามหมวด

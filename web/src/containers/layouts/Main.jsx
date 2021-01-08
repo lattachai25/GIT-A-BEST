@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../../components/Common/Header/index";
-import Menu_bar from "../../components/Common/Header/menu_ber";
+import Nav from "../../components/Common/Header/menu_left.js";
+import Menu_bar from "../../components/Common/Header/menu_ber.js";
 
 export default ({ children }) => {
   console.log("render Main");
