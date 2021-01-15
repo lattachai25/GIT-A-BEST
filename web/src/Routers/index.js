@@ -13,7 +13,9 @@ import Etransport from "../containers/views/Epacking/index2.jsx";
 import Executive from "../containers/views/Epacking/index3.jsx";
 
 //Sourcing
-import Sub from "../containers/views/Sourcing/Sub";
+
+import Listall from "../containers/views/Sourcing/Sub/listall.js";
+import Sub from "../containers/views/Sourcing/Sub/createsub.js";
 import Barcode from "../containers/views/Sourcing/Barcode/index.jsx";
 import Itemcode from "../containers/views/Sourcing/Item_code/index.jsx";
 import Price from "../containers/views/Sourcing/Price/index.jsx";
@@ -60,6 +62,7 @@ export default () => {
               <Route path="/Etransport" component={Etransport} />
               <Route path="/Executive" component={Executive} />
               {/* ----------------------------------- Sourcing -------------------------------------------- */}
+              <Route path="/Listall" component={Listall} />
               <Route path="/Sub" component={Sub} />
               <Route path="/Barcode" component={Barcode} />
               <Route path="/Itemcode" component={Itemcode} />
