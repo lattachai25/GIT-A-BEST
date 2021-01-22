@@ -18,18 +18,10 @@ const db = mysql.createConnection({
   password: "",
   database: "admin_default",
 });
-// const db = mysql.createConnection({
-//   user: "admin_nut",
-//   host: "http://206.189.80.229",
-//   password: "028158702N",
-//   database: "admin_default",
-// });
-
-
 
 app.get("/vegetable/list", (req, res) => {
   db.query(
-    "SELECT vegetable.*, sku_code.*, sub.* FROM (((vegetable INNER JOIN sku_code ON vegetable.sku_code_id = sku_code.sku_code_id) INNER JOIN sub ON vegetable.sub_id = sub.sub_id))",
+    "SELECT vegetable.*, sku_code.*, sub.*, price.* FROM ((((vegetable INNER JOIN sku_code ON vegetable.sku_code_id = sku_code.sku_code_id) INNER JOIN sub ON vegetable.sub_id = sub.sub_id) INNER JOIN price ON vegetable.price_id = price.price_id))",
     (err, result) => {
       if (err) {
         console.log(err);
@@ -86,6 +78,34 @@ app.get("/type/list", (req, res) => {
   });
 });
 
+app.post("/login", (req, res)=> {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  db.query(
+    "SELECT * FROM user WHERE username = ? AND password = ?",
+    [username, password],
+    (err, result) => {
+      if (err) {
+        res.send({ err: err })
+      }
+
+      if (result.length > 0) {
+        res.send(result);
+      } else {
+        res.send({ message: "Wrong Username Password Combination!" });
+      }
+    }
+  );
+});
+
+
+
+
+
+
+
+
 app.post("/user/create", (req, res) => {
   const protion_id = req.body.protion_id;
   const username = req.body.username;
@@ -139,6 +159,6 @@ app.post("/sub/create", (req, res) => {
   );
 });
 
-app.listen("3001", () => {
+app.listen(3001, () => {
   console.log("Server Is Running on Compass! 3001");
 });

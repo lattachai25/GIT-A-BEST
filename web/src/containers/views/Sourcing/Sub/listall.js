@@ -7,7 +7,7 @@ function Listall() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://www.nextcis.com:3001/sub/list");
+      const result = await axios("http://localhost:3001/sub/list");
 
       setData({
         users: result.data,
@@ -16,6 +16,7 @@ function Listall() {
 
     fetchData();
   }, []);
+
 
   return (
     <table class="table">

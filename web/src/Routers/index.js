@@ -31,7 +31,7 @@ import Total_item from "../containers/views/Sourcing/Admin/total_Item/index";
 import Dashboard from "../containers/views/Admin/Dashboard";
 import Setting from "../containers/views/Admin/Setting";
 
-import Login from "../containers/views/Admin/Login/index.jsx";
+import Login from "../containers/views/Admin/Login/index.js";
 import Register from "../containers/views/Admin/Register/index.jsx";
 
 export default () => {

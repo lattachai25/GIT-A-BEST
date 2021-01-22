@@ -5,7 +5,7 @@ function Createsub() {
   const [typeList, setTypeList] = useState([]);
 
   const getType = () => {
-    Axios.get("http://www.nextcis.com:3001/type/list").then((response) => {
+    Axios.get("http://localhost:3001/type/list").then((response) => {
       setTypeList(response.data);
     });
   };
