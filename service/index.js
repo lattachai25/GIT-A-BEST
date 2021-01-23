@@ -6,11 +6,30 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+// const db = mysql.createConnection({
+//   user: "admin_nut",
+//   host: "http://206.189.80.229",
+//   password: "028158702N",
+//   database: "admin_default",
+// });
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
   password: "",
-  database: "pos_dev",
+  database: "admin_default",
+});
+
+app.get("/vegetable/list", (req, res) => {
+  db.query(
+    "SELECT vegetable.*, sku_code.*, sub.*, price.* FROM ((((vegetable INNER JOIN sku_code ON vegetable.sku_code_id = sku_code.sku_code_id) INNER JOIN sub ON vegetable.sub_id = sub.sub_id) INNER JOIN price ON vegetable.price_id = price.price_id))",
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    }
+  );
 });
 
 app.get("/sub/list", (req, res) => {
@@ -38,6 +57,13 @@ app.get("/user/list", (req, res) => {
     }
   );
 });
+app.delete("/user/delete/:user_id", (req, res) => {
+  const name = req.params.user_id;
+  const sqlDelete = "DELETE FROM user WHERE user_id = ? ";
+  db.query(sqlDelete, name, (err, result) => {
+    if (err) console.log(ree);
+  });
+});
 
 app.get("/branch/list", (req, res) => {
   db.query("SELECT * FROM branch", (err, result) => {
@@ -57,6 +83,27 @@ app.get("/type/list", (req, res) => {
       res.send(result);
     }
   });
+});
+
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  db.query(
+    "SELECT * FROM user WHERE username = ? AND password = ?",
+    [username, password],
+    (err, result) => {
+      if (err) {
+        res.send({ err: err });
+      }
+
+      if (result.length > 0) {
+        res.send(result);
+      } else {
+        res.send({ message: "Wrong Username Password Combination!" });
+      }
+    }
+  );
 });
 
 app.post("/user/create", (req, res) => {
@@ -112,6 +159,6 @@ app.post("/sub/create", (req, res) => {
   );
 });
 
-app.listen("3001", () => {
+app.listen(3001, () => {
   console.log("Server Is Running on Compass! 3001");
 });

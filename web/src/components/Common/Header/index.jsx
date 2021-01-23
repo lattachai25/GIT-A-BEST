@@ -174,11 +174,8 @@ export default () => {
           >
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header"> Sourcing List:</h6>
-              <Link to="/Listall" className="collapse-item">
-                รายชื่อ Subplier
-              </Link>
               <Link to="/Sub" className="collapse-item">
-                สร้างชื่อ Subplier
+                สร้างชื่อคู่ค้า
               </Link>
               <Link to="/Price" className="collapse-item">
                 ปรับราคาสินค้า
@@ -190,7 +187,7 @@ export default () => {
                 สร้าง BarCode
               </Link>
               <Link to="/Sour_Admin" className="collapse-item">
-                Subplier_Admin
+                Sour_Admin
               </Link>
               {/* <Link to="/Report_sourcing_all" className="collapse-item">
                 รายงานสินค้าตามหมวด
@@ -360,7 +357,7 @@ export default () => {
             <i className="fas fa-registered" />
             {/* <i className="fas fa-fw fa-folder" /> */}
 
-            <span> Administrator </span>
+            <span> Register</span>
           </a>
           <div
             id="Register"
@@ -372,20 +369,20 @@ export default () => {
               <h6 className="collapse-header"> Administrator </h6>
 
               <Link to="/Dashboard" className="collapse-item">
-                User List
+                Dashboard
+              </Link>
+              <Link to="/Setting" className="collapse-item">
+                Setting
               </Link>
               <Link to="/Register" className="collapse-item">
                 Register
-              </Link>
-              {/* <Link to="/Setting" className="collapse-item">
-                Setting
               </Link>
               <Link to="/Login" className="collapse-item">
                 Login
               </Link>
               <Link to="/Forgot" className="collapse-item">
                 Forgot Password
-              </Link> */}
+              </Link>
               <div className="collapse-divider" />
             </div>
           </div>

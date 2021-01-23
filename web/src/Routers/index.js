@@ -15,7 +15,7 @@ import Executive from "../containers/views/Epacking/index3.jsx";
 //Sourcing
 
 import Listall from "../containers/views/Sourcing/Sub/listall.js";
-import Sub from "../containers/views/Sourcing/Sub/index.js";
+import Sub from "../containers/views/Sourcing/Sub/createsub.js";
 import Barcode from "../containers/views/Sourcing/Barcode/index.jsx";
 import Itemcode from "../containers/views/Sourcing/Item_code/index.jsx";
 import Price from "../containers/views/Sourcing/Price/index.jsx";
@@ -28,11 +28,11 @@ import Create_po from "../containers/views/Sourcing/Admin/PO/create_po";
 import Total_item from "../containers/views/Sourcing/Admin/total_Item/index";
 
 // Administrator
-import Dashboard from "../containers/views/Admin/Dashboard";
-import Setting from "../containers/views/Admin/Setting";
+import Dashboard from "../containers/views/Administrator/Dashboard/index.js";
+import Setting from "../containers/views/Administrator/Setting/index.js";
 
-import Login from "../containers/views/Admin/Login/index.jsx";
-import Register from "../containers/views/Admin/Register/index.jsx";
+import Login from "../containers/views/Administrator/Login/index.js";
+import Register from "../containers/views/Administrator/Register/index.js";
 
 export default () => {
   return (

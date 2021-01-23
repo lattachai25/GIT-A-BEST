@@ -17,6 +17,7 @@ function Listall() {
     fetchData();
   }, []);
 
+
   return (
     <table class="table">
       <thead>
