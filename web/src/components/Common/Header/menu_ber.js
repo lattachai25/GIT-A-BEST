@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 function menu_ber() {
   return (
-    <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    <nav
+      className="navbar navbar-expand navbar-light bg-white topbar static-top shadow"
+      style={{ position: "fixed", width: "73%", }}
+    >
       <button
         id="sidebarToggleTop"
         className="btn btn-link d-md-none rounded-circle mr-3"

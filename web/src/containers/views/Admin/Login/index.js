@@ -82,10 +82,7 @@ function Login() {
                     Login
                   </button>
                 </div>
-                <div>
-                  {" "}
-                  <a href="/Register">Register</a>{" "}
-                </div>
+                <div>{/* <a href="/Register">Register</a> */}</div>
                 <div style={fonta3}>{loginStatus}</div>
               </div>
             </div>

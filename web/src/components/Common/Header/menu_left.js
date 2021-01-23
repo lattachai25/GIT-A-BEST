@@ -7,7 +7,14 @@ export default () => {
       <ul
         className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
-        style={{ width: "14 rem!important" }}
+        style={{
+          width: "14 rem!important",
+          position: "fixed",
+          overflowX: "hidden",
+          height: "100%",
+          top: "0",
+          left: "0",
+        }}
       >
         <Link
           to="/"
@@ -23,10 +30,10 @@ export default () => {
         </Link>
         <hr className="sidebar-divider my-0" />
         <li className="nav-item active">
-          <a className="nav-link">
+          <Link to="/Home" className="nav-link">
             <i className="fas fa-fw fa-tachometer-alt" />
             <span> Dashboard</span>
-          </a>
+          </Link>
         </li>
         <hr className="sidebar-divider" />
         <div className="sidebar-heading">Interface</div>
@@ -175,22 +182,22 @@ export default () => {
             <div className="bg-white py-2 collapse-inner rounded">
               <h6 className="collapse-header"> Sourcing List:</h6>
               <Link to="/Listall" className="collapse-item">
-                รายชื่อ Subplier
+                List Supplier
               </Link>
               <Link to="/Sub" className="collapse-item">
-                สร้างชื่อ Subplier
+                Add Supplier
               </Link>
               <Link to="/Price" className="collapse-item">
-                ปรับราคาสินค้า
+                Change product price
               </Link>
               <Link to="/Itemcode" className="collapse-item">
-                สร้างรหัส สินค้า
+                Create Product Code
               </Link>
               <Link to="/Barcode" className="collapse-item">
-                สร้าง BarCode
+                Create BarCode And QR Code
               </Link>
-              <Link to="/Sour_Admin" className="collapse-item">
-                Subplier_Admin
+              <Link to="/Listorderall" className="collapse-item">
+                List Order All
               </Link>
               {/* <Link to="/Report_sourcing_all" className="collapse-item">
                 รายงานสินค้าตามหมวด

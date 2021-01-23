@@ -15,7 +15,7 @@ function Login() {
       if (response.data.message) {
         setLoginStatus(response.data.message);
       } else {
-        setLoginStatus((window.location.href = "/Register"));
+        setLoginStatus((window.location.href = "/Home"));
       }
       //
       // console.log(response);
@@ -75,17 +75,16 @@ function Login() {
                   />
                 </div>
                 <div className="text-center form-group d-flex align-items-center justify-content-between col-12">
-                  <button
-                    onClick={login}
-                    className="btn btn-primary text-center"
-                  >
-                    Login
-                  </button>
+                  <center>
+                    <button
+                      onClick={login}
+                      className="btn btn-primary text-center"
+                    >
+                      Login
+                    </button>
+                  </center>
                 </div>
-                <div>
-                  {" "}
-                  <a href="/Register">Register</a>{" "}
-                </div>
+                <div>{/* <a href="/Register">Register</a> */}</div>
                 <div style={fonta3}>{loginStatus}</div>
               </div>
             </div>

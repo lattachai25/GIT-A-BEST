@@ -22,14 +22,25 @@ function Index() {
   };
 
   return (
-    <div>
-      <a type="button" class="btn btn-success float-right" href="/register">
+    <div style={{ width: "100%" }}>
+      <div
+        className="alert alert-primary"
+        style={{ position: "revert", marginTop: "100px" }}
+      >
+        User List
+      </div>
+      <a
+        type="button"
+        class="btn btn-success float-right"
+        href="/register"
+        style={{ fontSize: "12px", marginBottom: "10px" }}
+      >
         Create User
       </a>
       <div>
         <br />
       </div>
-      <table class="table">
+      <table className="table" style={{ fontSize: "12px" }}>
         <thead>
           <tr>
             <th scope="col">username</th>
@@ -61,6 +72,7 @@ function Index() {
                     deleteUser(user.user_id);
                   }}
                   className="btn btn-danger"
+                  style={{ fontSize: "10px" }}
                 >
                   Delete
                 </button>

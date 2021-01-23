@@ -39,7 +39,10 @@ function Index() {
   };
   return (
     <div>
-      <div class="alert alert-primary" role="alert">
+      <div
+        className="alert alert-primary"
+        style={{ position: "revert", marginTop: "100px" }}
+      >
         From Register User
       </div>
       <div className="form-row">

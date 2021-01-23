@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => (
   <form>
-    <div class="alert alert-primary" role="alert">
+    <div className="alert alert-primary" style={{ position: "revert" }}>
       Form Input Supplier
     </div>
     <div className="form-row">

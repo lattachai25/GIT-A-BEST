@@ -24,6 +24,12 @@ function Index() {
 
   return (
     <div>
+      <div
+        className="alert alert-primary"
+        style={{ position: "revert", marginTop: "100px" }}
+      >
+        Form Change Product Price
+      </div>
       <input
         type="text"
         placeholder="Search"

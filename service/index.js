@@ -34,7 +34,7 @@ app.get("/vegetable/list", (req, res) => {
 
 app.get("/sub/list", (req, res) => {
   db.query(
-    "SELECT sub.*, type.* FROM ((sub INNER JOIN type ON sub.type_id = type.type_id) )",
+    "SELECT sub.*, type.*, status.* FROM ((sub INNER JOIN type ON sub.type_id = type.type_id) INNER JOIN status ON sub.status = status.status_id)",
     (err, result) => {
       if (err) {
         console.log(err);

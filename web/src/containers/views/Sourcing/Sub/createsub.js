@@ -13,7 +13,10 @@ function Createsub() {
   return (
     <div>
       <form action="">
-        <div class="alert alert-primary" role="alert">
+        <div
+          className="alert alert-primary"
+          style={{ position: "revert", marginTop: "100px" }}
+        >
           Form Input Supplier
         </div>
         <div className="form-row">
