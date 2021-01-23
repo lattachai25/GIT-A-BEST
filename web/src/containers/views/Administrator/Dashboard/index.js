@@ -40,7 +40,6 @@ function Index() {
             <th scope="col">email</th>
             <th scope="col">branch</th>
             <th scope="col">Status</th>
-            <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
@@ -55,11 +54,7 @@ function Index() {
               <td>{user.email}</td>
               <td>{user.branch_name}</td>
               <td>{user.status_name}</td>
-              <td>
-                <button type="button" class="btn btn-warning">
-                  Edit
-                </button>
-              </td>
+
               <td>
                 <button
                   onClick={() => {

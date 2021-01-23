@@ -73,7 +73,7 @@ function Index() {
             name="email"
             type="text"
             className="form-control"
-            placeholder=""
+            placeholder="E-mail"
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -86,7 +86,7 @@ function Index() {
             name="protion_id"
             type="text"
             className="form-control"
-            placeholder="protion_id"
+            placeholder="Protion"
             onChange={(e) => {
               setProtion_id(e.target.value);
             }}
@@ -100,19 +100,19 @@ function Index() {
             name="Firstname"
             type="text"
             className="form-control"
-            placeholder=""
+            placeholder="First Name"
             onChange={(e) => {
               setFirstname(e.target.value);
             }}
           />
         </div>
         <div className="form-group col-md-6">
-          <label htmlFor="inputEmail4">LandName</label>
+          <label htmlFor="inputEmail4">Land Name</label>
           <input
             name="Landname"
             type="text"
             className="form-control"
-            placeholder=""
+            placeholder="Land Name"
             onChange={(e) => {
               setLandname(e.target.value);
             }}
