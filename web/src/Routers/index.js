@@ -21,6 +21,7 @@ import Itemcode from "../containers/views/Sourcing/Item_code/index.jsx";
 import Price from "../containers/views/Sourcing/Price/index.jsx";
 import Report_sourcing from "../containers/views/Sourcing/Report_sourcing/index.jsx";
 import Listorderall from "../containers/views/Sourcing/List_Order_All/Listorderall.js";
+import Add_product_price from "../containers/views/Sourcing/Item_code/Add_product_price.js";
 
 // admin Sourcing Views
 import Sour_Admin from "../containers/views/Sourcing/Admin/index";
@@ -71,6 +72,7 @@ export default () => {
               <Route path="/Report_sourcing" component={Report_sourcing} />
 
               <Route path="/Listorderall" component={Listorderall} />
+              <Route path="/Add_product_price" component={Add_product_price} />
               <Route path="/Sour_Admin" component={Sour_Admin} />
               <Route path="/Total_item" component={Total_item} />
               <Route path="/Po" component={Po} />

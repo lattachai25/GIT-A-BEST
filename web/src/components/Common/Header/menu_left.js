@@ -187,6 +187,9 @@ export default () => {
               <Link to="/Sub" className="collapse-item">
                 Add Supplier
               </Link>
+              <Link to="/Add_product_price" className="collapse-item">
+                Add product price
+              </Link>
               <Link to="/Price" className="collapse-item">
                 Change product price
               </Link>
@@ -195,6 +198,9 @@ export default () => {
               </Link>
               <Link to="/Barcode" className="collapse-item">
                 Create BarCode And QR Code
+              </Link>
+              <Link to="/Listorderall" className="collapse-item">
+                List Order All
               </Link>
               <Link to="/Listorderall" className="collapse-item">
                 List Order All

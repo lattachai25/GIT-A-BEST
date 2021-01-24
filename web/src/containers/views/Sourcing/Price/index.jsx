@@ -37,7 +37,7 @@ function Index() {
         onChange={handleChange}
       />
 
-      <table class="table table-striped">
+      <table class="table table-striped" style={{ fontSize: "12px" }}>
         <thead>
           <tr>
             <th scope="col">#</th>

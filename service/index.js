@@ -21,7 +21,7 @@ const db = mysql.createConnection({
 
 app.get("/vegetable/list", (req, res) => {
   db.query(
-    "SELECT vegetable.*, sku_code.*, sub.*, price.* FROM ((((vegetable INNER JOIN sku_code ON vegetable.sku_code_id = sku_code.sku_code_id) INNER JOIN sub ON vegetable.sub_id = sub.sub_id) INNER JOIN price ON vegetable.price_id = price.price_id))",
+    "SELECT vegetable.*, sku_code.*, sub.* FROM (((vegetable INNER JOIN sku_code ON vegetable.sku_code_id = sku_code.sku_code_id) INNER JOIN sub ON vegetable.sub_id = sub.sub_id))",
     (err, result) => {
       if (err) {
         console.log(err);
